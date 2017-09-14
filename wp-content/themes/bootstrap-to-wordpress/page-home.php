@@ -340,7 +340,7 @@ get_header(); ?>
 			<div class="row">
 			
 				<div class="col-sm-8 col-sm-offset-2">
-					<h2>What People Are Saying About Brad</h2>
+					<h2>What People Are Saying About Raghib</h2>
 					
 					<!-- TESTIMONIAL -->
 					<div class="row testimonial">
