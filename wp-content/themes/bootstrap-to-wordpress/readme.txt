@@ -1,6 +1,6 @@
 === Bootstrap to Wordpress ===
 
-Contributors: automattic
+Contributors: Raghib Shahriyer.
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.0
