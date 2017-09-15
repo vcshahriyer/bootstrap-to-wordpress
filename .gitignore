@@ -3,6 +3,7 @@
 !.gitignore
 !db/
 !wp-content/
+!db/
 
 # Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
 wp-content/*
