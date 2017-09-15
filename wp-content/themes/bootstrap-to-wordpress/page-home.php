@@ -30,23 +30,6 @@ $features_section_image = get_field('features_section_image');
 $features_section_title = get_field('features_section_title');
 $features_section_body = get_field('features_section_body');
 
-
-$project_feature_title = get_field('project_feature_title');
-$project_feature_body = get_field('project_feature_body');
-$course_introduction_title = get_field('course_introduction_title');
-$instructure_section_title = get_field('instructor_section_title');
-$instructure_name = get_field('instructor_name');
-$bio_excerpt = get_field('bio_excerpt');
-$full_bio = get_field('full_bio');
-$full_bio = get_field('full_bio');
-$twitter_username = get_field('twitter_username');
-$facebook_username = get_field('facebook_username');
-$google_plus_username = get_field('google_plus_username');
-$num_of_students = get_field('num_of_students');
-$num_reviews = get_field('num_reviews');
-$num_courses = get_field('num_courses');
-
-
 get_header(); ?>
 
 
@@ -217,30 +200,25 @@ get_header(); ?>
 	<section id="project-features">
 		<div class="container">
 		
-			<h2><?php echo $project_feature_title ?></h2>
-			<p class="lead"><?php echo $project_feature_body ?></p>
+			<h2>Final Project Features</h2>
+			<p class="lead">Throughout this entire course, you work towards building an incredibly beautiful website. Want to see the website <strong>you</strong> are going to build? <em>You're looking at it!</em> The website you're using right now is the website you will have built entirely by yourself, by the end of this course.</p>
 			
 			<div class="row">
-			
-			<?php $loop = new WP_Query( array('post_type' => 'project_feature', 'orderby' => 'post_id', 'order' => 'ASC') ) ?>
-				
-				<?php while($loop->have_posts()) : $loop->the_post(); ?>
-				
 				<div class="col-sm-4">
-				
-				
-				    <?php 
-                        if (has_post_thumbnail()) {
-                            the_post_thumbnail();
-                        }
-                    ?>
-				
-					<h3><?php the_title(); ?></h3>
-					<p><?php the_content(); ?></p>
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-design.png" alt="Design">
+					<h3>Sexy &amp; Modern Design</h3>
+					<p>You get to work with a modern, professional quality design &amp; layout.</p>
 				</div><!-- col -->
-				
-				<?php endwhile; ?>
-			
+				<div class="col-sm-4">
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-code.png" alt="Code">
+					<h3>Quality HTML5 &amp; CSS3</h3>
+					<p>You'll learn how hand-craft a stunning website with valid, semantic and beautiful HTML5 &amp; CSS3.</p>
+				</div><!-- col -->
+				<div class="col-sm-4">
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-cms.png" alt="CMS">
+					<h3>Easy-to-use CMS</h3>
+					<p>Allow your clients to easily update their websites by converting your static websites to dynamic websites, using WordPress.</p>
+				</div><!-- col -->
 				
 			</div><!-- row -->
 			
@@ -254,13 +232,8 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">
-					<h2><?php echo $course_introduction_title ?></h2>
-					<?php
-                    // Get the video URL and put it in the $video variable
-                    $videoID = get_post_meta(50, 'youtube_url', true);
-                    // Echo the embed code via oEmbed
-                    echo wp_oembed_get( 'http://www.youtube.com/watch?v=' . $videoID ); 
-                    ?>
+					<h2>Watch the Course Introduction</h2>
+					<iframe width="100%" height="415" src="//www.youtube.com/embed/q-mJJsnOHew" frameborder="0" allowfullscreen></iframe>
 				</div><!-- end col -->
 			</div><!-- row -->			
 		</div><!-- container -->
@@ -275,28 +248,23 @@ get_header(); ?>
 				<div class="col-sm-8 col-md-6">
 					<div class="row">
 						<div class="col-lg-8">
-							<h2><?php echo $instructure_section_title ?><small>&nbsp;<?php echo $instructure_name ?></small></h2>
+							<h2>Your Instructor <small>Brad Hussey</small></h2>
 						</div><!-- end col -->
 						<div class="col-lg-4">
-						<?php if(!empty($twitter_username)): ?>
-							<a href="https://twitter.com/<?php echo $twitter_username ?>" class="badge social twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-							<?php endif; ?>
-							
-							<?php if(!empty($facebook_username)): ?>
-							<a href="https://facebook.com/<?php echo $facebook_username ?>" class="badge social facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-							<?php endif; ?>
-							
-							
-							<?php if(!empty($google_plus_username)): ?>
-							<a href="https://plus.google.com/<?php echo $google_plus_username ?>" class="badge social gplus" target="_blank"><i class="fa fa-google-plus"></i></a>
-							<?php endif; ?>
+							<a href="https://twitter.com/bradhussey" class="badge social twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+							<a href="https://facebook.com/bradhussey" class="badge social facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a href="https://plus.google.com/+BradHussey" class="badge social gplus" target="_blank"><i class="fa fa-google-plus"></i></a>
 						</div><!-- end col -->
 					
 					</div><!-- row -->
 					
-					<p class="lead"><?php echo $bio_excerpt ?><p>
+					<p class="lead">A highly skilled professional, Brad Hussey is a passionate and experienced web designer, developer, blogger and digital entrepreneur.<p>
 					
-					<?php echo $full_bio ?>
+					<p>Hailing from North Of The Wall (Yellowknife, Canada), Brad made the trek to the Wet Coast (Vancouver, Canada) to educate and equip himself with the necessary skills to become a spearhead in his trade of solving problems on the web, crafting design solutions, and speaking in code.</p>
+					
+					<p>Brad's determination and love for what he does has landed him in some pretty interesting places with some neat people. He's had the privilege of working with, and providing solutions for, numerous businesses, big &amp; small, across the Americas.</p>
+					
+					<p>Brad builds custom websites, and provides design solutions for a wide-array of clientele at his company, Brightside Studios. He regularly blogs about passive income, living your life to the fullest, and provides premium quality web design tutorials and courses for tens of thousands of amazing people desiring to master their craft.</p>
 					
 					<hr>
 					
@@ -305,7 +273,7 @@ get_header(); ?>
 						<div class="col-xs-4">
 							<div class="num">
 								<div class="num-content">
-									<?php echo $num_of_students ?> <span>students</span>
+									41,000+ <span>students</span>
 								</div><!-- num-content -->
 							</div><!-- num -->
 						</div><!-- end col -->
@@ -313,7 +281,7 @@ get_header(); ?>
 						<div class="col-xs-4">
 							<div class="num">
 								<div class="num-content">
-									<?php echo $num_reviews ?> <span>reviews</span>
+									568 <span>reviews</span>
 								</div><!-- num-content -->
 							</div><!-- num -->
 						</div><!-- end col -->
@@ -321,7 +289,7 @@ get_header(); ?>
 						<div class="col-xs-4">
 							<div class="num">
 								<div class="num-content">
-									<?php echo $num_courses ?> <span>courses</span>
+									8 <span>courses</span>
 								</div><!-- num-content -->
 							</div><!-- num -->
 						</div><!-- end col -->
